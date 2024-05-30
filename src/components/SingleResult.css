@@ -1,0 +1,7 @@
+.singleSearch {
+    padding: 8px 20px;
+}
+
+.singleSearch:hover{
+    background-color: bisque;
+}
