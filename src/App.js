@@ -5,7 +5,7 @@ import SearchBar from './components/searchBar';
 import SearchResults from './components/searchResults';
 import React, { useState } from 'react';
 import Description from './components/Description';
-import { BrowserRouter } from 'react-router-dom';
+
 
 
 function App() {

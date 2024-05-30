@@ -1,10 +1,13 @@
 import React from 'react'
 import "./SingleResult.css"
+import { useNavigate } from 'react-router-dom'
 
 const SingleResult = ({ result }) => {
 
+  const navigate = useNavigate();
+
   const selectedRecipe = (dish) => {
-    alert("selected this dish :" + dish)
+    navigate(`/recipe/${dish}`);
   }
 
 

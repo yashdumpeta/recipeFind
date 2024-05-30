@@ -1,0 +1,8 @@
+.header {
+    font-family: 'Inter';
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Add this line */
+    align-items: center; /* This line is already present */
+  }
