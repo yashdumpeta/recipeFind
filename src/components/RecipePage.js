@@ -18,7 +18,7 @@ const RecipePage = () => {
 
     if (!recipe) {
         return (
-            <div>
+            <div className="landingPage">
                 <header className="header">
                     <h1>RecipeFind</h1>
                 </header>
@@ -38,7 +38,10 @@ const RecipePage = () => {
     }
 
     const getImageUrl = () => {
-        if (recipe.images.REGULAR && recipe.images.REGULAR.url) {
+        if (recipe.images.LARGE && recipe.images.LARGE.url) {
+            return recipe.images.LARGE.url;
+        }
+        else if (recipe.images.REGULAR && recipe.images.REGULAR.url) {
             return recipe.images.REGULAR.url;
         }
         else if (recipe.images.SMALL && recipe.images.SMALL.url) {
@@ -46,9 +49,6 @@ const RecipePage = () => {
         }
         else if (recipe.images.THUMBNAIL && recipe.images.THUMBNAIL.url) {
             return recipe.images.THUMBNAIL.url;
-        }
-        else if (recipe.images.LARGE && recipe.images.LARGE.url) {
-            return recipe.images.LARGE.url;
         }
         else {
             return '';
@@ -58,34 +58,75 @@ const RecipePage = () => {
     const recipeImageUrl = getImageUrl();
 
     return (
-        <div>
+        <div className="landingPage">
             <header className="header">
                 <h1>RecipeFind</h1>
             </header>
-            <div className="dishName">
-                <h1>{dishInfo}</h1>
-            </div>
             <div className="dish_image">
                 {recipeImageUrl && <img src={recipeImageUrl} alt={recipe.label} />}
             </div>
+            <div className="dishSource">
+                <h3>Recipe provided by {recipe.source}</h3>
+            </div>
+            <div className="dishName">
+                <h1>{dishInfo}</h1>
+            </div>
             <div className="additionalInfo">
-                <h3 className="calorieCount">{Math.round(recipe.calories)} cals</h3>
-                <button className="nutrition_button" onClick={toggleNutritionalInfo}>View Nutritional Information</button>
+                <div>
+                    <h3 className="numServings">{recipe.yield} servings</h3>
+                    <hr className="divider" />
+                    <h3 className="calorieCount">{Math.round(recipe.calories)} cals</h3>
+                    <hr className="divider" />
+                    <div className="button-container">
+                        <button className="nutrition_button" onClick={toggleNutritionalInfo}>
+                            View Nutritional Information
+                        </button>
+                    </div>
+
+                </div>
                 {showNutrition && (
-                    <ul className="nutritionalInfo">
-                        {recipe.digest.map((nutrient, index) => (
-                            <li key={index}>{nutrient.label}: {Math.round(nutrient.total)} {nutrient.unit}</li>
-                        ))}
-                    </ul>
+                    <div className="nutritionalInfoContainer">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colSpan="3">Nutritional Analysis</th>
+                                    <th>Per Serving</th>
+                                </tr>
+                                <tr>
+                                    <th>Serving Size</th>
+                                    <td colSpan="3">{`1 of ${recipe.yield} servings`}</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Calories</th>
+                                    <td>{Math.round(recipe.calories)}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                {recipe.digest.map((nutrient, index) => (
+                                    <tr key={index}>
+                                        <th>{nutrient.label}</th>
+                                        <td>{Math.round(nutrient.total)}</td>
+                                        <td>{nutrient.unit}</td>
+                                        <td></td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 )}
             </div>
             <div className="ingredients">
-                <h3>Ingredients: </h3>
+                <h3>Ingredients:</h3>
                 <ul>
                     {recipe.ingredientLines.map((ingredient, index) => (
-                        <li key={index}>{ingredient}</li>
+                        <li key={index}>{ingredient} </li>
                     ))}
                 </ul>
+                <div className="instructions">
+                    <h3>Cooking Instructions</h3>
+                </div>
             </div>
         </div>
     );

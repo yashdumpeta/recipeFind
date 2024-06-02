@@ -1,8 +1,10 @@
 .description {
     font-family: 'Inter';
-    font-style: italic;
-    margin: auto;
+    font-weight: 560;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    bottom: -100px;
+
 }

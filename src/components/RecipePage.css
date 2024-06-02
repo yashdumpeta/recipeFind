@@ -1,9 +1,139 @@
+
+
 .header {
     font-family: 'Inter';
     width: 40%;
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column; /* Add this line */
     align-items: center; /* This line is already present */
   }
+
+*{
+  font-family: 'Inter', sans-serif;
+}
+
+
+.dishName {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dishName h1 {
+  font-size: 2em;
+  color: #ff6347;
+}
+
+.dish_image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+.dish_image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4.5px;
+}
+
+.dishSource {
+  font-size: 0.75em;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dishSource h3 {
+  font-weight: 400; 
+}
+
+.additionalInfo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.numServings{
+  font-size: 1em;
+  margin-bottom: 10px;
+  font-weight: 450;
+  display: inline-block;
+}
+
+.calorieCount {
+  font-size: 1em;
+  margin-bottom: 10px;
+  font-weight: 450;
+  display: inline-block;
+}
+
+.divider {
+  border: none;
+  border-right: 2px solid #ccc;
+  height: 20px; /* Adjust the height as needed */
+  margin: 0 10px; /* Add some spacing between elements */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nutrition_button {
+  background-color: #007BFF;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.nutrition_button:hover {
+  background-color: #0056b3;
+}
+
+.nutritionalInfoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.nutritionalInfo {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.ingredients {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ingredients h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.ingredients ul {
+  list-style-type: circle;
+  padding-left: 20px;
+  text-align: left;
+  display: inline-block;
+}
+
+
+
+
+
 
