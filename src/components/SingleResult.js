@@ -6,9 +6,9 @@ const SingleResult = ({ result }) => {
 
   const navigate = useNavigate();
 
-  const selectedRecipe = (dishInfo) => {
-    navigate(`/recipe/${dishInfo.label}`, {state: {dishInfo}});
-  }
+  const selectedRecipe = (recipe) => {
+    navigate(`/recipe/${recipe.label}`, { state: { recipe } });
+  };
 
 
   return (
