@@ -31,6 +31,7 @@ const SearchBar = ({setResults}) => {
             const fetch_results = json.hits.filter((hit) => {
                 return query && hit.recipe && hit.recipe.image
             });
+            // console.log(fetch_results);
             setResults(fetch_results);
         })
     };

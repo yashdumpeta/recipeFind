@@ -17,7 +17,7 @@
 
 .dishName {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .dishName h1 {
@@ -40,7 +40,6 @@
 
 .dishSource {
   font-size: 0.75em;
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +70,7 @@
 
 .divider {
   border: none;
-  border-right: 2px solid #ccc;
+  border-right: 2px solid black;
   height: 20px; /* Adjust the height as needed */
   margin: 0 10px; /* Add some spacing between elements */
   display: inline-block;
@@ -110,6 +109,13 @@
   text-align: left;
 }
 
+
+.mainInfo{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .ingredients {
   text-align: center;
   margin-bottom: 20px;
@@ -117,6 +123,8 @@
   display: inline-block;
   margin-left: 20px;
   margin-right: 20px;
+  flex: 1;
+  margin-right: 20px; /* Adjust margin between columns */
 }
 
 .ingredients h3 {
@@ -132,6 +140,32 @@
   display: inline-block;
 }
 
+/* Style for instructions container */
+.instructions {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.instructions h3{
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.divider-main{
+  border: none;
+  border-right: 2px solid black;
+  height: 150px;
+  margin: 0 10px; /* Add some spacing between elements */
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 100px;
+}
 
 
 

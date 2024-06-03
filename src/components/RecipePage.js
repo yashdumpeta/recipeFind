@@ -57,6 +57,27 @@ const RecipePage = () => {
 
     const recipeImageUrl = getImageUrl();
 
+    const getInstructions = () => {
+        if (recipe.instructions) {
+            return (
+                <div>
+                    <ul className="steps">
+                        {recipe.instructions.map((step, index) => (
+                            <li key={index}>{step} </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+        else{
+            return (
+                <button className="steps_error">Access cooking instructions</button>
+            );
+        }
+    }
+
+    const cookingInstructions = getInstructions();
+
     return (
         <div className="landingPage">
             <header className="header">
@@ -65,11 +86,11 @@ const RecipePage = () => {
             <div className="dish_image">
                 {recipeImageUrl && <img src={recipeImageUrl} alt={recipe.label} />}
             </div>
-            <div className="dishSource">
-                <h3>Recipe provided by {recipe.source}</h3>
-            </div>
             <div className="dishName">
                 <h1>{dishInfo}</h1>
+            </div>
+            <div className="dishSource">
+                <h3>Recipe provided by {recipe.source}</h3>
             </div>
             <div className="additionalInfo">
                 <div>
@@ -117,15 +138,19 @@ const RecipePage = () => {
                     </div>
                 )}
             </div>
-            <div className="ingredients">
-                <h3>Ingredients:</h3>
-                <ul>
-                    {recipe.ingredientLines.map((ingredient, index) => (
-                        <li key={index}>{ingredient} </li>
-                    ))}
-                </ul>
+            <div className="mainInfo">
+                <div className="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        {recipe.ingredientLines.map((ingredient, index) => (
+                            <li key={index}>{ingredient} </li>
+                        ))}
+                    </ul>
+                </div>
+                <hr className="divider-main" />
                 <div className="instructions">
                     <h3>Cooking Instructions</h3>
+                    {cookingInstructions}
                 </div>
             </div>
         </div>
