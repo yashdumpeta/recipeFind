@@ -114,39 +114,26 @@ const RecipePage = () => {
                         </div>
 
                     </div>
-                    {showNutrition && (
-                        <div className="nutritionalInfoContainer">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colSpan="3">Nutritional Analysis</th>
-                                        <th>Per Serving</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Serving Size</th>
-                                        <td colSpan="3">{`1 of ${recipe.yield} servings`}</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>Calories</th>
-                                        <td>{Math.round(recipe.calories)}</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    {recipe.digest.map((nutrient, index) => (
-                                        <tr key={index}>
-                                            <th>{nutrient.label}</th>
-                                            <td>{Math.round(nutrient.total)}</td>
-                                            <td>{nutrient.unit}</td>
-                                            <td></td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    )}
+                    <div className="nutritionContainer">
+                        {showNutrition && (
+                            <div className="nutritionalInfoContainer">
+                                <table>
+                                    <tbody>
+                                        {recipe.digest.map((nutrient, index) => (
+                                            <tr key={index}>
+                                                <th>{nutrient.label}</th>
+                                                <td>{Math.round(nutrient.total)}</td>
+                                                <td>{nutrient.unit}</td>
+                                                <td></td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+                    </div>
                 </div>
+                <hr className="divider-horizontal" />
                 <div className="ingredients">
                     <h3>Ingredients</h3>
                     <ul>
