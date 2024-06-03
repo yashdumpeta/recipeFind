@@ -16,6 +16,12 @@ const RecipePage = () => {
         setShowNutrition(!showNutrition);
     };
 
+    const visitRecipe = () => {
+        console.log("Visiting recipe URL:", recipe.url);
+        window.location.href = recipe.url;
+    };
+
+
     if (!recipe) {
         return (
             <div className="landingPage">
@@ -57,26 +63,27 @@ const RecipePage = () => {
 
     const recipeImageUrl = getImageUrl();
 
+    <button className="absentRecipe" onClick={() => visitRecipe()}>View Recipe</button>
+
     const getInstructions = () => {
-        if (recipe.instructions) {
+        if (!recipe.instructions) {
             return (
-                <div>
-                    <ul className="steps">
-                        {recipe.instructions.map((step, index) => (
-                            <li key={index}>{step} </li>
-                        ))}
-                    </ul>
-                </div>
+                <button className="absentRecipe" onClick={() => visitRecipe()}> View Recipe </button>
             );
         }
-        else{
+        else {
             return (
-                <button className="steps_error">Access cooking instructions</button>
+                <ul>
+                    {recipe.instructions.map((step, index) => (
+                        <li key={index}>{step} </li>
+                    ))}
+                </ul>
             );
         }
     }
 
     const cookingInstructions = getInstructions();
+
 
     return (
         <div className="landingPage">
