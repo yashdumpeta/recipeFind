@@ -138,7 +138,9 @@ const RecipePage = () => {
                     <h3>Ingredients</h3>
                     <ul>
                         {recipe.ingredientLines.map((ingredient, index) => (
-                            <li key={index}>{ingredient} </li>
+                            <li key={index}>
+                                {ingredient}
+                            </li>
                         ))}
                     </ul>
                 </div>
