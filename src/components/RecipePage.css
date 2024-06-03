@@ -4,11 +4,20 @@
     font-family: 'Inter';
     width: 40%;
     margin-top: auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     display: flex;
-    flex-direction: column; /* Add this line */
-    align-items: center; /* This line is already present */
+    flex-direction: column;
+    align-items: center; 
   }
+
+
+.landingPage{
+  background-image: url('/wallpaper3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 *{
   font-family: 'Inter', sans-serif;
@@ -29,7 +38,6 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  margin-top: 100px;
 }
 
 .dish_image img {
@@ -82,6 +90,7 @@
   vertical-align: middle;
 }
 
+
 .nutrition_button {
   background-color: #007BFF;
   color: white;
@@ -110,27 +119,15 @@
 }
 
 
-.mainInfo{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 .ingredients {
   text-align: center;
   margin-bottom: 20px;
   margin-top: 100px;
-  display: inline-block;
-  margin-left: 20px;
-  margin-right: 20px;
-  flex: 1;
-  margin-right: 20px; /* Adjust margin between columns */
 }
 
 .ingredients h3 {
   font-size: 1.5em;
   color: #333;
-  margin-bottom: 10px;
 }
 
 .ingredients ul {
@@ -140,13 +137,9 @@
   display: inline-block;
 }
 
-/* Style for instructions container */
 .instructions {
-  flex: 1;
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 100px;
-  display: inline-block;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -157,17 +150,30 @@
   margin-bottom: 10px;
 }
 
-.divider-main{
+.absentRecipe{
+  background-color: #007BFF;
+  color: white;
+  padding: 5px 10px;
   border: none;
-  border-right: 2px solid black;
-  height: 150px;
-  margin: 0 10px; /* Add some spacing between elements */
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.absentRecipe:hover{
+  background-color: #0056b3;
 }
 
 
+.divider-horizontal{
+  border: none;
+  border-bottom: 1px solid black;
+  width: 37%;
+}
 
+.mainContainer {
+  margin-top: 125px;
 
-
+}
